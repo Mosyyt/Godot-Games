@@ -1,0 +1,408 @@
+[gd_scene load_steps=92 format=2]
+
+[ext_resource path="res://tile000.png" type="Texture" id=1]
+[ext_resource path="res://Bush (1).png" type="Texture" id=2]
+[ext_resource path="res://Grass (2).png" type="Texture" id=3]
+[ext_resource path="res://tile003.png" type="Texture" id=4]
+[ext_resource path="res://tile001.png" type="Texture" id=5]
+[ext_resource path="res://UI/Shooting.png" type="Texture" id=6]
+[ext_resource path="res://14.png" type="Texture" id=7]
+[ext_resource path="res://2.png" type="Texture" id=8]
+[ext_resource path="res://tile004.png" type="Texture" id=9]
+[ext_resource path="res://BG.png" type="Texture" id=10]
+[ext_resource path="res://Cactus (1).png" type="Texture" id=11]
+[ext_resource path="res://tile002.png" type="Texture" id=12]
+[ext_resource path="res://16.png" type="Texture" id=13]
+[ext_resource path="res://Crate.png" type="Texture" id=14]
+[ext_resource path="res://tile007.png" type="Texture" id=15]
+[ext_resource path="res://tile006.png" type="Texture" id=16]
+[ext_resource path="res://tile008.png" type="Texture" id=17]
+[ext_resource path="res://tile005.png" type="Texture" id=18]
+[ext_resource path="res://13060557_Icon_1-512.png" type="Texture" id=19]
+[ext_resource path="res://Icon_1-512.png" type="Texture" id=20]
+[ext_resource path="res://pngDesert/Objects/Bush (2).png" type="Texture" id=21]
+[ext_resource path="res://pngDesert/Objects/Stone.png" type="Texture" id=22]
+[ext_resource path="res://SignArrow.png" type="Texture" id=23]
+[ext_resource path="res://Soldier.gd" type="Script" id=24]
+[ext_resource path="res://pngDesert/Objects/Crate.png" type="Texture" id=25]
+[ext_resource path="res://Grass (1).png" type="Texture" id=26]
+[ext_resource path="res://pngDesert/Objects/Skeleton.png" type="Texture" id=27]
+[ext_resource path="res://Tree.png" type="Texture" id=28]
+[ext_resource path="res://9.png" type="Texture" id=29]
+[ext_resource path="res://Camera2D.gd" type="Script" id=30]
+[ext_resource path="res://robot.gd" type="Script" id=31]
+[ext_resource path="res://Robot/Idle (2).png" type="Texture" id=32]
+[ext_resource path="res://Robot/Idle (3).png" type="Texture" id=33]
+[ext_resource path="res://Robot/Idle (4).png" type="Texture" id=34]
+[ext_resource path="res://Robot/Idle (5).png" type="Texture" id=35]
+[ext_resource path="res://Robot/Idle (6).png" type="Texture" id=36]
+[ext_resource path="res://Robot/Run (4).png" type="Texture" id=37]
+[ext_resource path="res://Robot/Objects/RunShoot (1).png" type="Texture" id=38]
+[ext_resource path="res://Robot/Idle (8).png" type="Texture" id=39]
+[ext_resource path="res://Robot/Objects/RunShoot (2).png" type="Texture" id=40]
+[ext_resource path="res://Robot/Run (6).png" type="Texture" id=41]
+[ext_resource path="res://Robot/Run (7).png" type="Texture" id=42]
+[ext_resource path="res://Robot/Run (8).png" type="Texture" id=43]
+[ext_resource path="res://Robot/Run (1).png" type="Texture" id=44]
+[ext_resource path="res://Robot/Idle (9).png" type="Texture" id=45]
+[ext_resource path="res://Robot/Objects/RunShoot (7).png" type="Texture" id=46]
+[ext_resource path="res://Robot/Run (2).png" type="Texture" id=47]
+[ext_resource path="res://Robot/Objects/RunShoot (4).png" type="Texture" id=48]
+[ext_resource path="res://Robot/Run (5).png" type="Texture" id=49]
+[ext_resource path="res://Robot/Idle (10).png" type="Texture" id=50]
+[ext_resource path="res://Robot/Shoot (3).png" type="Texture" id=51]
+[ext_resource path="res://Robot/Objects/RunShoot (3).png" type="Texture" id=52]
+[ext_resource path="res://Robot/Shoot (2).png" type="Texture" id=53]
+[ext_resource path="res://Robot/Objects/RunShoot (5).png" type="Texture" id=54]
+[ext_resource path="res://Robot/Run (3).png" type="Texture" id=55]
+[ext_resource path="res://Robot/Objects/RunShoot (8).png" type="Texture" id=56]
+[ext_resource path="res://Robot/Objects/RunShoot (9).png" type="Texture" id=57]
+[ext_resource path="res://Robot/Shoot (4).png" type="Texture" id=58]
+[ext_resource path="res://Robot/Objects/RunShoot (6).png" type="Texture" id=59]
+[ext_resource path="res://Robot/Idle (7).png" type="Texture" id=60]
+[ext_resource path="res://Robot/Shoot (1).png" type="Texture" id=61]
+[ext_resource path="res://Robot/Idle (1).png" type="Texture" id=62]
+[ext_resource path="res://Robot/Dead (1).png" type="Texture" id=63]
+[ext_resource path="res://Robot/Dead (4).png" type="Texture" id=64]
+[ext_resource path="res://Robot/Dead (6).png" type="Texture" id=65]
+[ext_resource path="res://Robot/Dead (5).png" type="Texture" id=66]
+[ext_resource path="res://Robot/Dead (7).png" type="Texture" id=67]
+[ext_resource path="res://Robot/Dead (8).png" type="Texture" id=68]
+[ext_resource path="res://Robot/Dead (3).png" type="Texture" id=69]
+[ext_resource path="res://Robot/Dead (9).png" type="Texture" id=70]
+[ext_resource path="res://PathFollow2D.gd" type="Script" id=71]
+
+[sub_resource type="SpriteFrames" id=1]
+animations = [ {
+"frames": [ ExtResource( 1 ) ],
+"loop": true,
+"name": "idle",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 1 ), ExtResource( 5 ), ExtResource( 12 ), ExtResource( 4 ), ExtResource( 9 ), ExtResource( 18 ), ExtResource( 16 ), ExtResource( 15 ), ExtResource( 17 ) ],
+"loop": true,
+"name": "run",
+"speed": 20.0
+} ]
+
+[sub_resource type="StyleBoxEmpty" id=6]
+
+[sub_resource type="StyleBoxEmpty" id=9]
+
+[sub_resource type="StyleBoxEmpty" id=10]
+
+[sub_resource type="StyleBoxEmpty" id=11]
+
+[sub_resource type="StyleBoxEmpty" id=2]
+
+[sub_resource type="StyleBoxEmpty" id=7]
+
+[sub_resource type="StyleBoxEmpty" id=12]
+
+[sub_resource type="StyleBoxEmpty" id=13]
+
+[sub_resource type="StyleBoxEmpty" id=14]
+
+[sub_resource type="StyleBoxEmpty" id=8]
+
+[sub_resource type="Theme" id=4]
+
+[sub_resource type="StyleBoxEmpty" id=15]
+
+[sub_resource type="StyleBoxEmpty" id=16]
+
+[sub_resource type="StyleBoxEmpty" id=17]
+
+[sub_resource type="StyleBoxEmpty" id=18]
+
+[sub_resource type="StyleBoxEmpty" id=5]
+
+[sub_resource type="Curve2D" id=20]
+_data = {
+"points": PoolVector2Array( 0, 0, 0, 0, -1470.8, 148.41, 0, 0, 0, 0, 722.628, 162.544 )
+}
+
+[sub_resource type="SpriteFrames" id=19]
+animations = [ {
+"frames": [ ExtResource( 63 ), ExtResource( 69 ), ExtResource( 64 ), ExtResource( 66 ), ExtResource( 65 ), ExtResource( 67 ), ExtResource( 68 ), ExtResource( 70 ) ],
+"loop": true,
+"name": "dead",
+"speed": 10.0
+}, {
+"frames": [ ExtResource( 62 ), ExtResource( 32 ), ExtResource( 33 ), ExtResource( 45 ), ExtResource( 34 ), ExtResource( 60 ), ExtResource( 35 ), ExtResource( 36 ), ExtResource( 39 ), ExtResource( 50 ) ],
+"loop": true,
+"name": "idle",
+"speed": 6.0
+}, {
+"frames": [ ExtResource( 44 ), ExtResource( 47 ), ExtResource( 55 ), ExtResource( 42 ), ExtResource( 37 ), ExtResource( 49 ), ExtResource( 41 ), ExtResource( 43 ) ],
+"loop": true,
+"name": "run",
+"speed": 9.0
+}, {
+"frames": [ ExtResource( 38 ), ExtResource( 52 ), ExtResource( 57 ), ExtResource( 56 ), ExtResource( 40 ), ExtResource( 54 ), ExtResource( 46 ), ExtResource( 59 ), ExtResource( 48 ) ],
+"loop": true,
+"name": "runshoot",
+"speed": 10.0
+}, {
+"frames": [ ExtResource( 61 ), ExtResource( 53 ), ExtResource( 51 ), ExtResource( 58 ) ],
+"loop": true,
+"name": "shoot",
+"speed": 10.0
+} ]
+
+[sub_resource type="CapsuleShape2D" id=21]
+radius = 90.5169
+height = 356.276
+
+[node name="Main" type="Node2D"]
+
+[node name="world" type="Node2D" parent="."]
+
+[node name="bg" type="Node2D" parent="world"]
+
+[node name="map 1" type="Sprite" parent="world/bg"]
+position = Vector2( 221, 340 )
+scale = Vector2( 1.27109, 0.721875 )
+texture = ExtResource( 10 )
+
+[node name="Bush(2)" type="Sprite" parent="world/bg/map 1"]
+position = Vector2( 476.756, 74.8052 )
+scale = Vector2( 0.403911, 1 )
+texture = ExtResource( 21 )
+
+[node name="Stone" type="Sprite" parent="world/bg/map 1"]
+position = Vector2( 442.927, 80.3463 )
+scale = Vector2( 0.458089, 1 )
+texture = ExtResource( 22 )
+
+[node name="Crate" type="Sprite" parent="world/bg/map 1"]
+position = Vector2( -38.5496, 73.4199 )
+scale = Vector2( 0.437685, 0.705735 )
+texture = ExtResource( 25 )
+
+[node name="Skeleton" type="Sprite" parent="world/bg/map 1"]
+position = Vector2( 131.383, 94.1991 )
+texture = ExtResource( 27 )
+
+[node name="Tree" type="Sprite" parent="world/bg/map 1"]
+position = Vector2( 295.022, -67.987 )
+scale = Vector2( 0.447217, 1.3951 )
+texture = ExtResource( 28 )
+
+[node name="10" type="Sprite" parent="world/bg/map 1"]
+position = Vector2( -367.401, 178.701 )
+texture = ExtResource( 29 )
+offset = Vector2( -7.62939e-06, -1.38531 )
+
+[node name="16" type="Sprite" parent="world/bg/map 1"]
+position = Vector2( 409.354, 169.004 )
+scale = Vector2( 1.3359, 1 )
+texture = ExtResource( 29 )
+offset = Vector2( -0.00012207, -0.00012207 )
+
+[node name="15" type="Sprite" parent="world/bg/map 1"]
+position = Vector2( 259.364, 169.558 )
+scale = Vector2( 1.05317, 0.987014 )
+texture = ExtResource( 29 )
+offset = Vector2( -0.00012207, -0.00012207 )
+
+[node name="12" type="Sprite" parent="world/bg/map 1"]
+position = Vector2( 134.53, 170.944 )
+scale = Vector2( 1, 1.0303 )
+texture = ExtResource( 29 )
+offset = Vector2( -0.00012207, -0.00012207 )
+
+[node name="13" type="Sprite" parent="world/bg/map 1"]
+position = Vector2( 8.65401, 172.329 )
+scale = Vector2( 1, 1.05195 )
+texture = ExtResource( 29 )
+offset = Vector2( -6.10352e-05, -6.10352e-05 )
+
+[node name="11" type="Sprite" parent="world/bg/map 1"]
+position = Vector2( -118.796, 173.022 )
+scale = Vector2( 1, 1.06277 )
+texture = ExtResource( 29 )
+offset = Vector2( -6.10352e-05, -6.10352e-05 )
+
+[node name="9" type="Sprite" parent="world/bg/map 1"]
+position = Vector2( -242.312, 175.931 )
+texture = ExtResource( 29 )
+offset = Vector2( 2.67029e-05, -6.10352e-05 )
+
+[node name="map 2" type="Sprite" parent="world/bg"]
+position = Vector2( 1910, 339.5 )
+scale = Vector2( 1.38437, 0.721875 )
+texture = ExtResource( 10 )
+
+[node name="end" type="Sprite" parent="world/bg"]
+position = Vector2( 798, 452.875 )
+scale = Vector2( 0.856642, 0.814516 )
+texture = ExtResource( 13 )
+
+[node name="start" type="Sprite" parent="world/bg"]
+position = Vector2( -276.913, 446.5 )
+scale = Vector2( 0.842383, 0.655914 )
+texture = ExtResource( 7 )
+
+[node name="2" type="Sprite" parent="world/bg"]
+position = Vector2( -59, 453.468 )
+scale = Vector2( 0.972473, 0.578125 )
+texture = ExtResource( 8 )
+offset = Vector2( -0.609497, -0.810181 )
+
+[node name="2" type="Sprite" parent="world/bg/2"]
+position = Vector2( 124.425, 0.919556 )
+texture = ExtResource( 8 )
+
+[node name="3" type="Sprite" parent="world/bg"]
+position = Vector2( -172.476, 452.718 )
+scale = Vector2( 0.859375, 0.57417 )
+texture = ExtResource( 8 )
+offset = Vector2( -0.609497, -0.810181 )
+
+[node name="SignArrow" type="Sprite" parent="world/bg"]
+position = Vector2( -288, 333 )
+texture = ExtResource( 23 )
+
+[node name="Cactus(1)" type="Sprite" parent="world/bg"]
+position = Vector2( -144, 388 )
+scale = Vector2( 0.625347, 0.496847 )
+texture = ExtResource( 11 )
+
+[node name="Crate" type="Sprite" parent="world/bg"]
+position = Vector2( -303, 395 )
+scale = Vector2( 0.472432, 0.425577 )
+texture = ExtResource( 14 )
+
+[node name="Grass(2)" type="Sprite" parent="world/bg"]
+position = Vector2( -274, 404 )
+scale = Vector2( 0.49136, 0.556666 )
+texture = ExtResource( 3 )
+
+[node name="Bush(1)" type="Sprite" parent="world/bg"]
+position = Vector2( 0, 394 )
+scale = Vector2( 0.616918, 0.633333 )
+texture = ExtResource( 2 )
+
+[node name="4" type="Sprite" parent="world/bg"]
+position = Vector2( 167, 454 )
+scale = Vector2( 0.703125, 0.578125 )
+texture = ExtResource( 8 )
+
+[node name="2" type="Sprite" parent="world/bg/4"]
+position = Vector2( 125.156, 0 )
+texture = ExtResource( 8 )
+
+[node name="3" type="Sprite" parent="world/bg/4"]
+position = Vector2( 248.889, 0 )
+texture = ExtResource( 8 )
+
+[node name="4" type="Sprite" parent="world/bg/4"]
+position = Vector2( 375.467, -3.05176e-05 )
+texture = ExtResource( 8 )
+
+[node name="5" type="Sprite" parent="world/bg/4"]
+position = Vector2( 755.2, 0 )
+texture = ExtResource( 8 )
+
+[node name="6" type="Sprite" parent="world/bg/4"]
+position = Vector2( 499.2, 0 )
+texture = ExtResource( 8 )
+
+[node name="7" type="Sprite" parent="world/bg/4"]
+position = Vector2( 627.2, -3.05176e-05 )
+texture = ExtResource( 8 )
+
+[node name="Grass(1)" type="Sprite" parent="world/bg"]
+position = Vector2( 649, 395 )
+scale = Vector2( 0.460784, 1 )
+texture = ExtResource( 26 )
+
+[node name="Soldier" type="AnimatedSprite" parent="."]
+position = Vector2( -211, 373 )
+scale = Vector2( 1.80769, 2.07447 )
+frames = SubResource( 1 )
+animation = "idle"
+script = ExtResource( 24 )
+
+[node name="Position2D" type="Position2D" parent="Soldier"]
+position = Vector2( 22.6809, -15.9077 )
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2( 177, 305 )
+current = true
+script = ExtResource( 30 )
+
+[node name="Control" type="Control" parent="Camera2D"]
+margin_right = 40.0
+margin_bottom = 40.0
+
+[node name="left" type="Button" parent="Camera2D/Control"]
+margin_left = -500.0
+margin_top = 216.0
+margin_right = 24.0
+margin_bottom = 734.0
+rect_scale = Vector2( 0.148, 0.134 )
+custom_styles/hover = SubResource( 6 )
+custom_styles/pressed = SubResource( 9 )
+custom_styles/focus = SubResource( 10 )
+custom_styles/disabled = SubResource( 11 )
+custom_styles/normal = SubResource( 2 )
+icon = ExtResource( 19 )
+
+[node name="right" type="Button" parent="Camera2D/Control"]
+margin_left = -400.0
+margin_top = 216.0
+margin_right = 124.0
+margin_bottom = 734.0
+rect_scale = Vector2( 0.148, 0.134 )
+custom_styles/hover = SubResource( 7 )
+custom_styles/pressed = SubResource( 12 )
+custom_styles/focus = SubResource( 13 )
+custom_styles/disabled = SubResource( 14 )
+custom_styles/normal = SubResource( 8 )
+icon = ExtResource( 20 )
+
+[node name="shoot" type="Button" parent="Camera2D/Control"]
+margin_left = 411.0
+margin_top = 218.0
+margin_right = 935.0
+margin_bottom = 736.0
+rect_scale = Vector2( 0.148, 0.134 )
+theme = SubResource( 4 )
+custom_styles/hover = SubResource( 15 )
+custom_styles/pressed = SubResource( 16 )
+custom_styles/focus = SubResource( 17 )
+custom_styles/disabled = SubResource( 18 )
+custom_styles/normal = SubResource( 5 )
+icon = ExtResource( 6 )
+
+[node name="Path2D" type="Path2D" parent="."]
+position = Vector2( 577, 353 )
+scale = Vector2( 0.274, 0.283 )
+curve = SubResource( 20 )
+
+[node name="PathFollow2D" type="PathFollow2D" parent="Path2D"]
+position = Vector2( -1470.8, 148.41 )
+rotation = 0.00644301
+script = ExtResource( 71 )
+
+[node name="robot" type="AnimatedSprite" parent="Path2D/PathFollow2D"]
+position = Vector2( -19.1582, -141.222 )
+frames = SubResource( 19 )
+animation = "idle"
+frame = 9
+script = ExtResource( 31 )
+
+[node name="Area2D" type="Area2D" parent="Path2D/PathFollow2D/robot"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Path2D/PathFollow2D/robot/Area2D"]
+position = Vector2( -29.0602, 21.3889 )
+shape = SubResource( 21 )
+
+[connection signal="button_down" from="Camera2D/Control/left" to="Soldier" method="_on_left_button_down"]
+[connection signal="button_up" from="Camera2D/Control/left" to="Soldier" method="_on_left_button_up"]
+[connection signal="button_down" from="Camera2D/Control/right" to="Soldier" method="_on_right_button_down"]
+[connection signal="button_up" from="Camera2D/Control/right" to="Soldier" method="_on_right_button_up"]
+[connection signal="pressed" from="Camera2D/Control/shoot" to="Soldier" method="_on_shoot_pressed"]
+[connection signal="area_entered" from="Path2D/PathFollow2D/robot/Area2D" to="Path2D/PathFollow2D" method="_on_Area2D_area_entered"]

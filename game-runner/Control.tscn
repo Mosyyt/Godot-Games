@@ -1,0 +1,118 @@
+[gd_scene load_steps=17 format=2]
+
+[ext_resource path="res://Control.gd" type="Script" id=1]
+[ext_resource path="res://Fish2.png" type="Texture" id=2]
+[ext_resource path="res://fish.png" type="Texture" id=3]
+[ext_resource path="res://UnderSea.png" type="Texture" id=4]
+[ext_resource path="res://Speaker_Icon.svg.png" type="Texture" id=5]
+[ext_resource path="res://1200px-Mute_Icon.svg.png" type="Texture" id=6]
+[ext_resource path="res://TextureButton.gd" type="Script" id=7]
+[ext_resource path="res://mixkit-swimming-in-calm-water-1308.wav" type="AudioStream" id=8]
+[ext_resource path="res://AIRSTRIKE.TTF" type="DynamicFontData" id=9]
+[ext_resource path="res://for Imostafa.png" type="Texture" id=10]
+
+[sub_resource type="Theme" id=1]
+
+[sub_resource type="DynamicFont" id=2]
+size = 40
+outline_size = 6
+outline_color = Color( 0, 0, 0, 1 )
+use_filter = true
+font_data = ExtResource( 9 )
+
+[sub_resource type="Theme" id=3]
+
+[sub_resource type="DynamicFont" id=4]
+size = 40
+outline_size = 6
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 9 )
+
+[sub_resource type="Theme" id=5]
+
+[sub_resource type="Theme" id=6]
+
+[node name="Control" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="Map" type="Sprite" parent="."]
+position = Vector2( 526, 70 )
+scale = Vector2( 2.71625, 1.99625 )
+texture = ExtResource( 4 )
+
+[node name="shark" type="Sprite" parent="."]
+position = Vector2( 1337, 538 )
+scale = Vector2( 0.211487, 0.233518 )
+texture = ExtResource( 3 )
+
+[node name="fish" type="Sprite" parent="."]
+position = Vector2( 1314, 386 )
+scale = Vector2( 0.0890355, 0.0935162 )
+texture = ExtResource( 2 )
+
+[node name="Control" type="Control" parent="."]
+margin_right = 383.0
+margin_bottom = 197.0
+script = ExtResource( 1 )
+
+[node name="start" type="Button" parent="Control"]
+anchor_left = 0.123
+anchor_top = 0.284
+anchor_right = 0.7
+anchor_bottom = 0.756
+margin_left = 695.891
+margin_top = -39.948
+margin_right = 705.9
+margin_bottom = -39.932
+rect_pivot_offset = Vector2( 116, 47 )
+theme = SubResource( 1 )
+custom_colors/font_color = Color( 1, 0, 0, 1 )
+custom_colors/font_color_hover = Color( 1, 1, 1, 1 )
+custom_fonts/font = SubResource( 2 )
+text = "Start"
+
+[node name="exit" type="Button" parent="Control"]
+anchor_left = 0.123
+anchor_top = 0.284
+anchor_right = 0.7
+anchor_bottom = 0.756
+margin_left = 693.891
+margin_top = 61.052
+margin_right = 703.9
+margin_bottom = 61.068
+rect_pivot_offset = Vector2( 116, 47 )
+theme = SubResource( 3 )
+custom_colors/font_color = Color( 1, 0, 0, 1 )
+custom_colors/font_color_hover = Color( 1, 1, 1, 1 )
+custom_fonts/font = SubResource( 4 )
+text = "Exit"
+
+[node name="TextureButton" type="TextureButton" parent="Control"]
+margin_left = 926.0
+margin_top = 511.0
+margin_right = 2974.0
+margin_bottom = 2559.0
+rect_scale = Vector2( 0.04, 0.04 )
+theme = SubResource( 5 )
+toggle_mode = true
+texture_normal = ExtResource( 5 )
+texture_pressed = ExtResource( 6 )
+script = ExtResource( 7 )
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="Control"]
+stream = ExtResource( 8 )
+autoplay = true
+
+[node name="TextureRect" type="TextureRect" parent="Control"]
+margin_left = 1.0
+margin_top = 4.0
+margin_right = 1281.0
+margin_bottom = 724.0
+rect_scale = Vector2( 0.581, 0.696 )
+theme = SubResource( 6 )
+texture = ExtResource( 10 )
+
+[connection signal="pressed" from="Control/start" to="Control" method="_on_start_pressed"]
+[connection signal="pressed" from="Control/exit" to="Control" method="_on_exit_pressed"]
+[connection signal="pressed" from="Control/TextureButton" to="Control/TextureButton" method="_on_TextureButton_pressed"]

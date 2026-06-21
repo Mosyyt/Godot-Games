@@ -1,0 +1,22 @@
+# Godot 3 / 4
+.import/
+export/
+export_presets.cfg
+*.translation
+
+# Godot 4
+.godot/
+*.uid
+
+# Build output
+*.apk
+*.aab
+*.ipa
+*.dmg
+*.exe
+
+# IDE
+.vscode/
+.idea/
+*.DS_Store
+Thumbs.db

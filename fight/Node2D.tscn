@@ -1,0 +1,58 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://Node2D.gd" type="Script" id=1]
+[ext_resource path="res://d5t7wsk-4fe0b959-b034-4faf-ab3a-e5960504c25f.jpg" type="Texture" id=2]
+[ext_resource path="res://file-removebg-preview.png" type="Texture" id=3]
+[ext_resource path="res://Medieval_King_-_2D_Character_Sprite___TokeGameArt-removebg-preview.png" type="Texture" id=5]
+[ext_resource path="res://Abdoullah-Ashgar-EL-kharef.ttf" type="DynamicFontData" id=6]
+
+[sub_resource type="DynamicFont" id=1]
+size = 80
+font_data = ExtResource( 6 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 80
+font_data = ExtResource( 6 )
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource( 1 )
+
+[node name="D5T7Wsk-4Fe0B959-b034-4Faf-ab3a-e5960504C25f" type="Sprite" parent="."]
+position = Vector2( 513.5, 300 )
+scale = Vector2( 1.13889, 1.32889 )
+texture = ExtResource( 2 )
+
+[node name="MedievalKing-2dCharacterSpriteTokeGameArt-removebg-preview" type="Sprite" parent="."]
+position = Vector2( 907, 326 )
+rotation = -3.14159
+scale = Vector2( 0.971832, -1.03449 )
+texture = ExtResource( 5 )
+
+[node name="File-removebg-preview" type="Sprite" parent="."]
+position = Vector2( 632, 319 )
+scale = Vector2( 1.35122, 1.43835 )
+texture = ExtResource( 3 )
+
+[node name="Start" type="Button" parent="."]
+margin_left = 98.0
+margin_top = 169.0
+margin_right = 268.0
+margin_bottom = 300.0
+custom_colors/font_color = Color( 0.0313726, 0, 1, 1 )
+custom_fonts/font = SubResource( 1 )
+text = "Start"
+flat = true
+
+[node name="Exit" type="Button" parent="."]
+margin_left = 111.0
+margin_top = 257.0
+margin_right = 250.0
+margin_bottom = 388.0
+custom_colors/font_color = Color( 1, 0, 0, 1 )
+custom_fonts/font = SubResource( 2 )
+text = "Exit"
+flat = true
+expand_icon = true
+
+[connection signal="pressed" from="Start" to="." method="_on_Start_pressed"]
+[connection signal="pressed" from="Exit" to="." method="_on_Exit_pressed"]

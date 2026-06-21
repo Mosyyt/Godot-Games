@@ -1,0 +1,23 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/mixkit-swimming-in-calm-water-1308.wav-1f8d1ec1f7a7055fe00b508ba3ee3200.sample"
+
+[deps]
+
+source_file="res://mixkit-swimming-in-calm-water-1308.wav"
+dest_files=[ "res://.import/mixkit-swimming-in-calm-water-1308.wav-1f8d1ec1f7a7055fe00b508ba3ee3200.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0
